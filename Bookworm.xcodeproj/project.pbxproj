@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40D14BB26A1F5C600B5DFC1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D14BA26A1F5C600B5DFC1 /* DetailView.swift */; };
 		C4D0B3BE26A0AA0C008ED420 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D0B3BD26A0AA0C008ED420 /* AddBookView.swift */; };
 		C4D0B3C026A0AB6D008ED420 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D0B3BF26A0AB6D008ED420 /* RatingView.swift */; };
 		C4D0B3C226A0AD63008ED420 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D0B3C126A0AD63008ED420 /* EmojiRatingView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C40D14BA26A1F5C600B5DFC1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C4D0B3BD26A0AA0C008ED420 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		C4D0B3BF26A0AB6D008ED420 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		C4D0B3C126A0AD63008ED420 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				C4F9D0E6269F5B1E00DA24DA /* BookwormApp.swift */,
 				C4F9D0E8269F5B1E00DA24DA /* ContentView.swift */,
+				C40D14BA26A1F5C600B5DFC1 /* DetailView.swift */,
 				C4D0B3C126A0AD63008ED420 /* EmojiRatingView.swift */,
 				C4F9D0EF269F5B2000DA24DA /* Persistence.swift */,
 				C4F9D0F4269F5B2000DA24DA /* Info.plist */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4F9D0F0269F5B2000DA24DA /* Persistence.swift in Sources */,
+				C40D14BB26A1F5C600B5DFC1 /* DetailView.swift in Sources */,
 				C4F9D0F3269F5B2000DA24DA /* Bookworm.xcdatamodeld in Sources */,
 				C4D0B3C226A0AD63008ED420 /* EmojiRatingView.swift in Sources */,
 				C4F9D0E9269F5B1E00DA24DA /* ContentView.swift in Sources */,
