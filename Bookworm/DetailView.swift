@@ -23,7 +23,7 @@ struct DetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingDeleteAlert = false
     
-    let book: Book
+    let book: Book 
     
     var body: some View {
         GeometryReader { geometry in
@@ -53,6 +53,15 @@ struct DetailView: View {
                 RatingView(rating: .constant(Int(self.book.rating)))
                     .font(.largeTitle)
                 
+                HStack {
+                    Text("Book reviewed: ")
+                        .font(.subheadline)
+                        .foregroundColor(Color.gray)
+                    Text(self.convertToString(date: self.book.date))
+                        .font(.subheadline)
+                }
+                .padding()
+                                
                 Spacer()
             }
         }
@@ -76,6 +85,16 @@ struct DetailView: View {
         //try? self.moc.save()
         
         presentationMode.wrappedValue.dismiss()
+    }
+    
+    func convertToString(date: Date?) -> String {
+        guard let date = date else {
+            return "No date"
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d, yyy"
+        return formatter.string(from: date)
     }
 }
 

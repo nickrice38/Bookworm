@@ -19,6 +19,22 @@ struct AddBookView: View {
     @State private var review = ""
     
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
+    
+    var genreSelected: Bool {
+        
+        // Challenge 1
+        let title = self.title.trimmingCharacters(in: .whitespaces)
+        let author = self.author.trimmingCharacters(in: .whitespaces)
+        let genre = self.genre.trimmingCharacters(in: .whitespaces)
+        let review = self.review.trimmingCharacters(in: .whitespaces)
+        
+        if title.isEmpty || author.isEmpty || genre.isEmpty || review.isEmpty {
+            return false
+        }
+        
+        return true
+    }
+    
 
     var body: some View {
         NavigationView {
@@ -27,7 +43,7 @@ struct AddBookView: View {
                     TextField("Name of book", text: $title)
                     TextField("Author", text: $author)
 
-                    Picker("Genre", selection: $genre) {
+                    Picker("Select a genre...", selection: $genre) {
                         ForEach(genres, id: \.self) {
                             Text($0)
                         }
@@ -48,12 +64,14 @@ struct AddBookView: View {
                         newBook.rating = Int16(self.rating)
                         newBook.genre = self.genre
                         newBook.review = self.review
+                        newBook.date = Date()
 
                         try? self.moc.save()
                         self.presentationMode.wrappedValue.dismiss()
 
                     }
                 }
+                .disabled(genreSelected == false)
             }
             .navigationBarTitle("Add Book")
         }

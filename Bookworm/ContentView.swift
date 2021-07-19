@@ -11,6 +11,23 @@ import CoreData
 import SwiftUI
 import CoreData
 
+struct StyledTitle: ViewModifier {
+    let rating: Int16
+    
+    func body(content: Content) -> some View {
+        return content
+            .foregroundColor(getColor())
+    }
+    
+    func getColor() -> Color {
+        if rating == 1 {
+            return Color.red
+        } else {
+            return Color.black
+        }
+    }
+}
+
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Book.entity(), sortDescriptors: [
@@ -33,6 +50,7 @@ struct ContentView: View {
                         VStack(alignment: .leading) {
                             Text(book.title ?? "Unknown title")
                                 .font(.headline)
+                                .modifier(StyledTitle(rating: book.rating))
                             Text(book.author ?? "Unknown author")
                                 .foregroundColor(.secondary)
                         }
