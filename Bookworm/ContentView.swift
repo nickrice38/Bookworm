@@ -8,9 +8,6 @@
 import SwiftUI
 import CoreData
 
-import SwiftUI
-import CoreData
-
 struct StyledTitle: ViewModifier {
     let rating: Int16
     
@@ -23,7 +20,7 @@ struct StyledTitle: ViewModifier {
         if rating == 1 {
             return Color.red
         } else {
-            return Color.black
+            return Color.primary
         }
     }
 }
